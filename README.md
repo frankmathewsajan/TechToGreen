@@ -14,6 +14,8 @@ TechtoGreen/
 │   └── stylesheet.css     # Additional styles
 ├── images/                 # Image assets
 │   └── ttgLogo.png        # Website favicon/logo
+├── vendor/                 # Vendor assets (Bootstrap, Font Awesome, etc.)
+│   └── leave it untouched.
 ├── js/                     # JavaScript files
 │   ├── theme.js           # Custom JS for the project
 │   └── switcher.min.js    # Style switcher script
@@ -62,7 +64,7 @@ All images, including logos and icons, are in the `images/` folder.
 
 ### 5. Working with Vendor Files
 
-You can't.
+Please don't :).
 
 ### 6. Loading Components Dynamically
 
