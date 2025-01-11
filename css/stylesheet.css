@@ -5,7 +5,7 @@
    Template URL: http://demo.harnishdesign.net/html/simone
    Author URL: https://themeforest.net/user/harnishdesign
    File Description : Main css file of the template
-	
+
 =================================================
   Table of Contents
 =================================================
@@ -35,7 +35,7 @@
 
 =======================================================*/
 /* =================================== */
-/*  1. Basic Style 
+/*  1. Basic Style
 /* =================================== */
 body, html {
   height: 100%;
@@ -57,36 +57,40 @@ body {
 /*-------- Cursor Animation --------*/
 body {
   margin: 0;
-  padding: 0;
-  background-color: #fff; /* You can customize this color */
-  /* overflow: hidden; */
-  cursor: none;
+  height: 100vh;
+  cursor: none; /* Hide default cursor */
+  background-color: #f0f0f0;
 }
 
-.cursor {
-  width: 8px;
-  height: 8px;
+/* Black dot for the cursor */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
   background-color: black;
   border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
   pointer-events: none;
   z-index: 1000;
-  transform: translate(-50%, -50%);
 }
 
-.circle {
-  width: 40px;
-  height: 40px;
-  border: 2px solid black;
-  border-radius: 50%;
+/* Drone image that follows the cursor */
+.cursor-drone {
   position: fixed;
   top: 0;
   left: 0;
+  width: 80px;
+  height: 80px;
   pointer-events: none;
   z-index: 999;
   transform: translate(-50%, -50%);
+}
+
+/* Style for the drone image */
+.cursor-drone img {
+  width: 100%;
+  height: 100%;
 }
 
 /*-------- SlideShow --------*/
@@ -997,7 +1001,7 @@ html[dir="rtl"] .side-header.side-header-right .primary-menu {
 }
 
 .primary-menu.navbar-dark .navbar-nav > li > a:not(.btn) {
-  color: rgba(250, 250, 250, 0.9);
+
 }
 
 .primary-menu.navbar-dark.navbar-line-under-text .navbar-nav > li > a:not(.logo):after, .primary-menu.navbar-dark.navbar-line-under-text .navbar-nav > li > a.active:after {
@@ -2714,8 +2718,6 @@ html[dir="rtl"] .list-style-1 > li:after {
 #footer {
   background: #fff;
   color: #252b33;
-  padding: 66px 0px;
-  padding: 4.125rem 0;
 }
 
 #footer .nav .nav-item {
@@ -2744,7 +2746,7 @@ html[dir="rtl"] .list-style-1 > li:after {
 
 #footer .footer-copyright {
   border-top: 1px solid #e2e8ea;
-  padding: 0px 0px;
+
   color: #67727c;
 }
 
@@ -2791,9 +2793,7 @@ html[dir="rtl"] .list-style-1 > li:after {
   color: #fafafa;
 }
 
-#footer.footer-dark.bg-primary {
-  color: #fff;
-}
+
 
 #footer.footer-dark.bg-primary .nav .nav-item .nav-link {
   color: #fff;

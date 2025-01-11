@@ -10,18 +10,34 @@
 	"use strict";
 
 //Cursor Animation
-const cursor = document.querySelector('.cursor');
-const circle = document.querySelector('.circle');
+const cursorDot = document.querySelector('.cursor-dot');
+    const cursorDrone = document.querySelector('.cursor-drone');
 
-document.addEventListener('mousemove', (e) => {
-  // Set the position of the black dot
-  cursor.style.top = `${e.clientY}px`;
-  cursor.style.left = `${e.clientX}px`;
+    // Smooth follow effect using requestAnimationFrame
+    let mouseX = 0, mouseY = 0; // Cursor's current position
+    let droneX = 0, droneY = 0; // Drone's current position
 
-  // Smoothly animate the circle to follow the cursor
-  circle.style.transition = 'transform 0.1s ease-out';
-  circle.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
-});
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        // Update the black dot position instantly
+        cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    });
+
+    function animateDrone() {
+        // Smoothly interpolate drone's position towards cursor's position
+        droneX += (mouseX - droneX) * 0.1;
+        droneY += (mouseY - droneY) * 0.1;
+
+        // Update drone position
+        cursorDrone.style.transform = `translate(${droneX}px, ${droneY}px)`;
+
+        // Request next animation frame
+        requestAnimationFrame(animateDrone);
+    }
+
+    // Start the animation loop
+    animateDrone();
 
 //SLideShow
 

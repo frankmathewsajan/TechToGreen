@@ -11,7 +11,7 @@
     <div class="row gy-5">
         <div class="col-md-4 col-xl-3 order-1 order-md-0 text-center text-md-start">
             <h2 class="mb-3 text-5 text-uppercase">Address</h2>
-            <p class="text-3 mb-4">Incubation Centre, VIT-AP University, Andhra Pradesh, India, 522237</p>
+            <p class="text-3 mb-4">3rd Floor, Flat-3A, 221/1, R.N.Thure Road, Bediapara, Kolkata, West Bengal - 700077</p>
             <p class="text-3 mb-4"><span class="text-primary text-4 me-2"><i
                     class="fas fa-envelope"></i></span>techtogreen02@gmail.com</p>
             <h2 class="mb-3 text-5 text-uppercase">Follow Us</h2>
@@ -24,9 +24,9 @@
                                                      href="http://www.facebook.com/harnishdesign/"
                                                      target="_blank" title="Facebook"><i
                         class="fab fa-facebook-f"></i></a></li>
-                <li class="social-icons-google"><a data-bs-toggle="tooltip" href="http://www.google.com/"
-                                                   target="_blank" title="Google"><i
-                        class="fab fa-google"></i></a></li>
+                <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="http://www.linkedin.com/"
+                                                     target="_blank" title="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a></li>
                 <li class="social-icons-github"><a data-bs-toggle="tooltip" href="http://www.github.com/"
                                                    target="_blank" title="GitHub"><i
                         class="fab fa-github"></i></a></li>
@@ -36,15 +36,33 @@
             <h2 class="mb-3 text-5 text-uppercase text-center text-md-start">Send us a note</h2>
             <form id="contact-form" action="php/mail.php" method="post">
                 <div class="row g-4">
+                    <!-- Name Field -->
                     <div class="col-xl-6">
-                        <input name="name" type="text" class="form-control" required placeholder="Name">
+                        <input name="name" type="text" class="form-control" required placeholder="Name *">
                     </div>
+                    <!-- Email Field -->
                     <div class="col-xl-6">
-                        <input name="email" type="email" class="form-control" required placeholder="Email">
+                        <input name="email" type="email" class="form-control" required placeholder="Email *">
                     </div>
+                    <!-- Subject Dropdown -->
+                    <div class="col-xl-6">
+                        <select name="subject" class="form-control" required>
+                            <option value="" disabled selected>Subject *</option>
+                            <option value="business_inspection">Business/Inspection Inquiry</option>
+                            <option value="product_inquiry">Product Inquiry</option>
+                            <option value="collaboration_inquiry">Collaboration Inquiry</option>
+                            <option value="vendor_inquiry">Vendor Inquiry</option>
+                        </select>
+                    </div>
+                    <!-- Mobile Number Field -->
+                    <div class="col-xl-6">
+                        <input name="mobile" type="text" class="form-control" placeholder="Mobile Number">
+                    </div>
+
+                    <!-- Message Field -->
                     <div class="col">
-                                    <textarea name="form-message" class="form-control" rows="5" required
-                                              placeholder="Tell us more about your needs........"></textarea>
+                        <textarea name="form-message" class="form-control" rows="5" required
+                                  placeholder="Type your message... *"></textarea>
                     </div>
                 </div>
                 <p class="text-center mt-4 mb-0">
@@ -56,3 +74,27 @@
         </div>
     </div>
 </div>
+
+<!-- Add inline CSS -->
+<style>
+    .form-control {
+        font-size: 1rem;
+        padding: 0.75rem;
+        border: 1px solid #ced4da;
+        border-radius: 0.375rem;
+        box-shadow: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    select.form-control {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: url('data:image/svg+xml;charset=US-ASCII,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 fill=%27%23343a40%27 class=%27bi bi-chevron-down%27 viewBox=%270 0 16 16%27%3e%3cpath fill-rule=%27evenodd%27 d=%27M1.5 6.5a.5.5 0 0 1 .8-.4l5.5 4.5 5.5-4.5a.5.5 0 0 1 .8.4v.5a.5.5 0 0 1-.8.4L8 11.9 1.8 7.4a.5.5 0 0 1-.8-.4v-.5z%27/%3e%3c/svg%3e') no-repeat right 0.75rem center/16px;
+    }
+</style>

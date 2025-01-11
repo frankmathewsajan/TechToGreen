@@ -29,52 +29,16 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link id="color-switcher" type="text/css" rel="stylesheet" href="#">
-    <style>
-        .hero-wrap {
-            position: relative;
-            overflow: hidden;
-        }
 
-        .slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-        }
-
-        .slide {
-            min-width: 100%;
-            height: 100%;
-            flex-shrink: 0;
-            transition: opacity 1s ease-in-out;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            z-index: 0;
-        }
-
-        .slide.active {
-            opacity: 1;
-            z-index: 1;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-
-    </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-offset="0">
 
-<div class="cursor"></div>
-<div class="circle"></div>
-<div class="preloader">
+    <div class="cursor-dot"></div>
+    <div class="cursor-drone">
+        <!-- Replace SVG with an image -->
+        <img src="./images/drone.png" alt="Drone Image">
+    </div>
+    w<div class="preloader">
     <div class="lds-ellipsis">
         <div></div>
         <div></div>
@@ -90,69 +54,11 @@
         <section id="home">
             <div class="hero-wrap">
                 <div class="hero-mask opacity-6 bg-dark"></div>
-                <div class="slideshow">
-                    <!-- YouTube Video Slide -->
-                    <div class="slide">
-                        <div class="player" data-property="{videoURL:'https://youtu.be/PMNnEEEacCg',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1}"></div>
-                    </div>
-                    <!-- Image Slides -->
-                    <div class="slide">
-                        <img src="./images/SlideShow/img1.jpg" alt="Slide 1" class="img-fluid">
-                    </div>
-                    <div class="slide">
-                        <img src="./images/SlideShow/img2.jpg" alt="Slide 2" class="img-fluid">
-                    </div>
-                    <div class="slide">
-                        <img src="./images/SlideShow/img3.jpeg" alt="Slide 3" class="img-fluid">
-                    </div>
-                </div>
+                <div class="player" data-property="{videoURL:'https://youtu.be/XHWfAhrR9-o',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1}"></div>
                 <div class="hero-content section d-flex min-vh-100">
-                    <div class="container my-auto">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <h1 class="text-5 text-light mb-4">Welcome to</h1>
-                                <h1 class="text-7 fw-500 text-white mb-2 mb-md-3">Tech to Green</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#about" class="scroll-down-arrow text-white smooth-scroll"><span class="animated"><i
-                            class="fa fa-chevron-down"></i></span></a>
-                </div>
+                    <a href="#about" class="scroll-down-arrow text-white smooth-scroll"><span class="animated"><i class="fa fa-chevron-down"></i></span></a> </div>
             </div>
         </section>
-
-
-        <script>
-
-            document.addEventListener('DOMContentLoaded', function () {
-
-
-                // Slideshow functionality
-                const slides = document.querySelectorAll('.slide');
-                let currentIndex = 0;
-
-                function showSlide(index) {
-                    slides.forEach((slide, i) => {
-                        if (i === index) {
-                            slide.classList.add('active');
-                        } else {
-                            slide.classList.remove('active');
-                        }
-                    });
-                }
-
-                function nextSlide() {
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    showSlide(currentIndex);
-                }
-
-                // Initial display
-                showSlide(currentIndex);
-
-                // Change slide every 2 seconds
-                setInterval(nextSlide, 2000);
-            });
-        </script>
 
         <section id="about" class="section"></section>
 
