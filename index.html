@@ -60,7 +60,227 @@
             </div>
         </section>
 
-        <section id="about" class="section"></section>
+        <section id="about" class="section">
+            <div class="container">
+                <!-- Heading -->
+                <div class="position-relative d-flex text-center mb-5">
+            
+                    <p class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0">TechtoGreen's Action<span
+                                class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span>
+                    </p>
+                </div>
+                <!-- Heading end-->
+                <div class="container d-flex">
+                    <!-- Left Side: Slideshow -->
+                    <div class="slideshow-container" style="flex: 1; max-width: 50%;">
+                        <!-- Full-width images with left and right arrows -->
+                        <!-- Slide 1 -->
+            
+                        <!-- Slide 2 -->
+                        <div class="mySlides">
+                            <img src="./images/SlideShow/1.png" style="width:100%; aspect-ratio: 4 / 3;">
+                            <link href="images/ttgLogo.png" rel="icon">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="mySlides">
+                            <img src="./images/SlideShow/2.png" style="width:100%; aspect-ratio: 4 / 3;">
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="mySlides">
+                            <img src="./images/SlideShow/3.png" style="width:100%; aspect-ratio: 4 / 3;">
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="mySlides">
+                            <img src="./images/SlideShow/4.png" style="width:100%; aspect-ratio: 4 / 3;">
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="mySlides">
+                            <img src="./images/SlideShow/5.png" style="width:100%; aspect-ratio: 4 / 3;">
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="mySlides">
+                            <img src="./images/SlideShow/6.png" style="width:100%; aspect-ratio: 4 / 3;">
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="mySlides">
+                            <img src="./images/SlideShow/7.png" style="width:100%; aspect-ratio: 4 / 3;">
+                        </div>
+                        <!-- Slide 9 -->
+                        <div class="mySlides">
+                            <img src="./images/SlideShow/8.png" style="width:100%; aspect-ratio: 4 / 3;">
+                        </div>
+                        <div class="mySlides">
+                            <img src="./images/SlideShow/9.png" style="width:100%; aspect-ratio: 4 / 3;">
+                        </div>
+            
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+            
+                    <!-- Right Side: Agridrone Writeup -->
+                    <div class="writeup" style="flex: 1; padding-left: 20px;">
+                        <h2>Agridrone: Revolutionizing Agriculture</h2>
+                        <p style='text-align: justify;'>
+                            The Agridrone is an innovative solution designed to enhance the efficiency of modern farming practices.
+                            Equipped with precision mapping, real-time monitoring, and intelligent spraying systems, the Agridrone
+                            optimizes resource usage, reduces environmental impact, and increases yield. Its user-friendly interface,
+                            coupled with advanced AI and GPS integration, ensures seamless operation, even in challenging terrains.
+                        </p>
+                        <p style="text-align: justify;">
+                            With features such as automated flight paths, weather adaptability, and customizable payload options, the
+                            Agridrone empowers farmers to make data-driven decisions. Its robust build and extended battery life make
+                            it a reliable partner for sustainable agriculture.
+                        </p>
+                    </div>
+                </div>
+            
+                <style>
+                    * {box-sizing: border-box;}
+            
+                    /* Slideshow container */
+                    .slideshow-container {
+                        position: relative;
+                        margin: auto;
+                    }
+            
+                    /* Hide the images by default */
+                    .mySlides {
+                        display: none;
+                    }
+            
+                    /* Next & previous buttons */
+                    .prev, .next {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        width: auto;
+                        margin-top: -22px;
+                        padding: 10px;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 18px;
+                        transition: 0.6s ease;
+                        user-select: none;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        border-radius: 50%;
+                    }
+            
+                    .prev {
+                        left: 10px;
+                    }
+            
+                    .next {
+                        right: 10px;
+                    }
+            
+                    .prev:hover, .next:hover {
+                        background-color: rgba(0, 0, 0, 0.8);
+                    }
+            
+                    /* Fading animation */
+                    .fade {
+                        animation-name: fade;
+                        animation-duration: 1.5s;
+                    }
+            
+                    @keyframes fade {
+                        from {opacity: .4;}
+                        to {opacity: 1;}
+                    }
+            
+                    .writeup {
+                        font-family: Arial, sans-serif;
+                    }
+            
+                    .writeup h2 {
+                        font-size: 24px;
+                        color: #333;
+                    }
+            
+                    .writeup p {
+                        font-size: 16px;
+                        line-height: 1.6;
+                        color: #555;
+                    }
+                </style>
+            
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+            
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+            
+                    function showSlides(n) {
+                        let i;
+                        let slides = document.getElementsByClassName("mySlides");
+                        if (n > slides.length) {slideIndex = 1;}
+                        if (n < 1) {slideIndex = slides.length;}
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        slides[slideIndex-1].style.display = "block";
+                    }
+                </script>
+            
+                <br>
+            
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
+                    <span class="dot" onclick="currentSlide(9)"></span>
+
+                </div>
+                <div class="brands-grid separator-border mt-5">
+                    <!-- Heading -->
+                    <div class="text-center mb-5">
+                        <p class="text-9 text-dark fw-600 lh-base mb-0">TechToGreen's Progress<span
+                                class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span>
+                        </p>
+                    </div>
+                    <!-- Statistics -->
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <div class="featured-box text-center">
+                                <h4 class="text-12 text-muted mb-0"><span class="counter" data-from="0"
+                                                                          data-to="7">7</span>+</h4>
+                                <p class="mb-0">Years Experience</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="featured-box text-center">
+                                <h4 class="text-12 text-muted mb-0"><span class="counter" data-from="0"
+                                                                          data-to="10">10</span>+</h4>
+                                <p class="mb-0">Patents</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="featured-box text-center">
+                                <h4 class="text-12 text-muted mb-0"><span class="counter" data-from="0"
+                                                                          data-to="15">15</span>+</h4>
+                                <p class="mb-0">Projects Done</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="featured-box text-center">
+                                <h4 class="text-12 text-muted mb-0"><span class="counter" data-from="0"
+                                                                          data-to="20">20</span>+</h4>
+                                <p class="mb-0">Awards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <link rel="stylesheet" href="css/index.css">
         <section id="services" class="section bg-light"></section>
@@ -108,7 +328,7 @@
     }
 
     loadComponent('header', 'partials/header.html');
-    loadComponent('about', 'partials/about.html');
+    
     loadComponent('services', 'partials/services.html');
     loadComponent('portfolio', 'partials/portfolio.html');
     loadComponent('contact', 'partials/contact.html');
