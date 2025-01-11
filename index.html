@@ -77,39 +77,39 @@
                         <!-- Slide 1 -->
             
                         <!-- Slide 2 -->
-                        <div class="mySlides">
+                        <div class="mySlides ">
                             <img src="./images/SlideShow/1.png" style="width:100%; aspect-ratio: 4 / 3;">
                             <link href="images/ttgLogo.png" rel="icon">
                         </div>
                         <!-- Slide 3 -->
-                        <div class="mySlides">
+                        <div class="mySlides ">
                             <img src="./images/SlideShow/2.png" style="width:100%; aspect-ratio: 4 / 3;">
                         </div>
                         <!-- Slide 4 -->
-                        <div class="mySlides">
+                        <div class="mySlides ">
                             <img src="./images/SlideShow/3.png" style="width:100%; aspect-ratio: 4 / 3;">
                         </div>
                         <!-- Slide 5 -->
-                        <div class="mySlides">
+                        <div class="mySlides ">
                             <img src="./images/SlideShow/4.png" style="width:100%; aspect-ratio: 4 / 3;">
                         </div>
                         <!-- Slide 6 -->
-                        <div class="mySlides">
+                        <div class="mySlides ">
                             <img src="./images/SlideShow/5.png" style="width:100%; aspect-ratio: 4 / 3;">
                         </div>
                         <!-- Slide 7 -->
-                        <div class="mySlides">
+                        <div class="mySlides ">
                             <img src="./images/SlideShow/6.png" style="width:100%; aspect-ratio: 4 / 3;">
                         </div>
                         <!-- Slide 8 -->
-                        <div class="mySlides">
+                        <div class="mySlides ">
                             <img src="./images/SlideShow/7.png" style="width:100%; aspect-ratio: 4 / 3;">
                         </div>
                         <!-- Slide 9 -->
-                        <div class="mySlides">
+                        <div class="mySlides ">
                             <img src="./images/SlideShow/8.png" style="width:100%; aspect-ratio: 4 / 3;">
                         </div>
-                        <div class="mySlides">
+                        <div class="mySlides ">
                             <img src="./images/SlideShow/9.png" style="width:100%; aspect-ratio: 4 / 3;">
                         </div>
             
@@ -204,26 +204,41 @@
                         color: #555;
                     }
                 </style>
+            <script>
+                let slideIndex = 1;
             
-                <script>
-                    let slideIndex = 1;
-                    showSlides(slideIndex);
+                // Show the initial slide
+                showSlides(slideIndex);
             
-                    function plusSlides(n) {
-                        showSlides(slideIndex += n);
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                    localStorage.setItem('slide', slideIndex);
+                }
+            
+                function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+            
+                    // Handle wrapping around slide indices
+                    if (n > slides.length) { slideIndex = 1; }
+                    if (n < 1) { slideIndex = slides.length; }
+            
+                    // Hide all slides and show the current one
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
                     }
+                    slides[slideIndex - 1].style.display = "block";
+                }
             
-                    function showSlides(n) {
-                        let i;
-                        let slides = document.getElementsByClassName("mySlides");
-                        if (n > slides.length) {slideIndex = 1;}
-                        if (n < 1) {slideIndex = slides.length;}
-                        for (i = 0; i < slides.length; i++) {
-                            slides[i].style.display = "none";
-                        }
-                        slides[slideIndex-1].style.display = "block";
-                    }
-                </script>
+                // Get the last stored slide index, default to 1 if not set
+                slideIndex = parseInt(localStorage.getItem('slide')) || 1;
+            
+                // Set up the interval to auto-slide
+                setInterval(() => {
+                    plusSlides(1); // Increment slides every 3 seconds
+                }, 3000);
+            </script>
+            
             
                 <br>
             
